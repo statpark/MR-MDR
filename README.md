@@ -2,7 +2,7 @@
 Multivariate Rank-Based Multifactor Dimensionality Reduction
 
 ## Notice
-All source codes were listed in file "MRMDR.R" for implemeting Multi-CMDR 
+All source codes were listed in file "MRMDR.R" for implemeting MRMDR 
 
 ## Citation
 
@@ -20,7 +20,7 @@ example <- read.csv("example.csv")
 snp.mat <- example[,1:20]
 phes <- example[,21:22]
 source("Multi-CMDR.R")
-MCMDR(phes, snp.mat, K=2, cv=10, nperm=0, sele.type='cvc', test.type="ht2", covrt=NULL, trim=T)
+MRMDR(phes, snp.mat, K=2, cv=10, nperm=0, sele.type='cvc', test.type="mvr", covrt=NULL, trim=T)
 ```
 
 * inputs: 
@@ -29,7 +29,7 @@ MCMDR(phes, snp.mat, K=2, cv=10, nperm=0, sele.type='cvc', test.type="ht2", covr
   * K         ---- K-way interactions, default 2
   * cv        ---- k-fold cross validation; default 10
   * nperm     ---- permutation times for calculating p-value for the best model (0 if pvalue if not needed; default)
-  * test.type ---- test statistics, could be 'ht2' or 't', corresponding to hotelling t2 test and t test; default 'ht2'
+  * test.type ---- test statistics, could be 'mvr', corresponding to spatial rank sum statistics; default 'mvr'
   * sele.type ---- the way to tune the best model, 'cvc' or 'score'; default 'cvc'
   * covrt     ---- the covariate matrix; default NULL (no covariates)
   * trim      ---- If TRUE, remove samples in noise cluster; default TRUE
