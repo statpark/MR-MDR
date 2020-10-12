@@ -1,4 +1,4 @@
-# MRMDR
+# MR-MDR
 Multivariate Rank-Based Multifactor Dimensionality Reduction
 
 ## Notice
